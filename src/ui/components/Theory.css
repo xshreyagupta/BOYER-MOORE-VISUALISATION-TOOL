@@ -1,0 +1,483 @@
+/* Theory.css — Theory mode styles.
+   Follows the existing token/convention pattern from App.css and tokens.css.
+   All colours reference the existing CSS custom properties. */
+
+/* ── Layout ───────────────────────────────────────────────────── */
+.theory {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* ── Section card ─────────────────────────────────────────────── */
+.theory__section {
+  background: var(--panel);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-md);
+  padding: 26px 24px 22px;
+  box-shadow: var(--shadow-panel);
+}
+
+.theory__section-title {
+  margin: 0 0 16px;
+  font-family: var(--font-serif);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--text-heading-ivory);
+  letter-spacing: -0.01em;
+  border-bottom: 1px solid var(--border-burgundy-subtle);
+  padding-bottom: 12px;
+}
+
+.theory__section-label {
+  font-family: var(--font-heading);
+  font-size: 11.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent-dusty-rose);
+  font-weight: 600;
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* ── Prose ────────────────────────────────────────────────────── */
+.theory__prose {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.theory__prose p {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: var(--ink-soft);
+}
+
+.theory__prose strong {
+  color: var(--text-heading-ivory);
+}
+
+/* Two-column comparison layout */
+.theory__cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 640px) {
+  .theory__cols {
+    grid-template-columns: 1fr;
+  }
+}
+
+.theory__col-card {
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+}
+
+.theory__col-card h4 {
+  margin: 0 0 8px;
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-heading-ivory);
+}
+
+.theory__col-card ul {
+  margin: 0;
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.theory__col-card li {
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+
+/* ── Visual alignment demo ────────────────────────────────────── */
+.theory__demo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.theory__demo-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+}
+
+.theory__demo-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink-faint);
+  width: 72px;
+  flex-shrink: 0;
+  text-align: right;
+  letter-spacing: 0.04em;
+}
+
+.theory__chars {
+  display: flex;
+  gap: 3px;
+}
+
+.theory__char {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 3px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 500;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  color: var(--ink);
+  flex-shrink: 0;
+}
+
+.theory__char--active {
+  border-color: var(--amber);
+  background: var(--amber-soft);
+  color: var(--ink);
+}
+
+.theory__char--match {
+  border-color: var(--match);
+  background: var(--match-soft);
+  color: var(--match);
+}
+
+.theory__char--mismatch {
+  border-color: var(--mismatch);
+  background: var(--mismatch-soft);
+  color: var(--mismatch);
+}
+
+.theory__char--skipped {
+  opacity: 0.35;
+}
+
+.theory__char--gap {
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+.theory__demo-note {
+  font-size: 12px;
+  color: var(--ink-faint);
+  font-style: italic;
+  margin-left: 82px;
+  line-height: 1.5;
+}
+
+.theory__step-header {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin: 14px 0 6px;
+}
+
+.theory__step-header:first-child {
+  margin-top: 0;
+}
+
+.theory__shift-arrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--ink-soft);
+  margin-left: 82px;
+  margin-top: 2px;
+}
+
+.theory__shift-arrow::before {
+  content: "→";
+  font-size: 16px;
+  color: var(--amber);
+}
+
+/* Legend */
+.theory__legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--rule);
+}
+
+.theory__legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--ink-soft);
+}
+
+.theory__legend-swatch {
+  width: 14px;
+  height: 14px;
+  border-radius: 2px;
+  border: 1px solid;
+  flex-shrink: 0;
+}
+
+.theory__legend-swatch--active {
+  background: var(--amber-soft);
+  border-color: var(--amber);
+}
+
+.theory__legend-swatch--match {
+  background: var(--match-soft);
+  border-color: var(--match);
+}
+
+.theory__legend-swatch--mismatch {
+  background: var(--mismatch-soft);
+  border-color: var(--mismatch);
+}
+
+.theory__legend-swatch--skipped {
+  background: var(--paper);
+  border-color: var(--rule);
+  opacity: 0.4;
+}
+
+/* ── Pseudocode / complexity table ────────────────────────────── */
+.theory__code-block {
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  margin-bottom: 12px;
+  overflow-x: auto;
+}
+
+.theory__code-block code {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  line-height: 1.7;
+  color: var(--ink);
+  white-space: pre;
+  display: block;
+}
+
+.theory__complexity-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+.theory__complexity-table th {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  font-weight: 600;
+  padding: 8px 10px;
+  border-bottom: 2px solid var(--rule);
+  text-align: left;
+  background: var(--paper);
+}
+
+.theory__complexity-table td {
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--rule);
+  color: var(--ink-soft);
+  vertical-align: top;
+  line-height: 1.55;
+}
+
+.theory__complexity-table tr:last-child td {
+  border-bottom: none;
+}
+
+.theory__complexity-table td:first-child {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.theory__complexity-table td code {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  padding: 1px 4px;
+  color: var(--ink);
+}
+
+/* Stacked best/worst divs inside count + total cells */
+.theory__complexity-table td > div + div {
+  margin-top: 4px;
+  padding-top: 4px;
+  border-top: 1px dashed var(--rule);
+}
+
+/* ── Key-takeaways table ──────────────────────────────────────── */
+.theory__comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.theory__comparison-table th {
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink);
+  padding: 9px 12px;
+  border-bottom: 2px solid var(--rule);
+  text-align: left;
+  background: var(--paper);
+}
+
+.theory__comparison-table td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--rule);
+  color: var(--ink-soft);
+  line-height: 1.5;
+  vertical-align: top;
+}
+
+.theory__comparison-table tr:last-child td {
+  border-bottom: none;
+}
+
+.theory__comparison-table td:first-child {
+  font-weight: 600;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.theory__comparison-table tr:nth-child(even) td {
+  background: rgba(25, 20, 24, 0.6);
+}
+
+/* overflow scroll on mobile */
+.theory__table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ── Note callout ─────────────────────────────────────────────── */
+.theory__note {
+  background: var(--amber-soft);
+  border-left: 3px solid var(--amber);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: 10px 14px;
+  font-size: 13px;
+  color: var(--ink-soft);
+  line-height: 1.55;
+  margin-top: 8px;
+}
+
+.theory__note strong {
+  color: var(--ink);
+}
+/* Bigger headings in Theory section */
+.theory h1 {
+  font-size: 2.2rem;
+}
+
+.theory h2 {
+  font-size: 1.7rem;
+}
+
+.theory h3,
+.theory__complexity-subtitle {
+  font-size: 1.3rem;
+}
+/* Highlight complexity section headings */
+.theory__complexity-subtitle {
+  font-size: 1.55rem;
+  font-weight: 800;
+  color: var(--accent-blush);
+  background: rgba(168, 93, 112, 0.16);
+  padding: 12px 16px;
+  border-left: 5px solid var(--accent-dusty-rose);
+  border-radius: 8px;
+  margin: 24px 0 14px;
+  letter-spacing: 0.2px;
+}
+
+/* Main complexity headings */
+.theory h2 {
+  font-size: 1.9rem;
+  font-weight: 800;
+}
+/* Main Theory section headings */
+.theory h2 {
+  font-family: var(--font-serif);
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-top: 32px;
+  margin-bottom: 20px;
+  color: var(--text-heading-ivory);
+}
+/* Bigger, more prominent numbered section headings */
+.theory .theory__section-title {
+  font-family: var(--font-serif);
+  font-size: 26px !important;
+  font-weight: 600 !important;
+  line-height: 1.35;
+  color: var(--text-heading-ivory);
+  letter-spacing: -0.015em;
+  padding-bottom: 14px;
+  border-bottom: 2px solid var(--accent-dusty-rose);
+}
+/* Large, highlighted complexity headings */
+.theory__complexity-block > .theory__step-header {
+  font-family: var(--font-heading);
+  font-size: 22px !important;
+  font-weight: 700 !important;
+  line-height: 1.35;
+  color: var(--text-heading-ivory) !important;
+  text-transform: none;
+  letter-spacing: -0.01em;
+  background: var(--amber-soft);
+  border-left: 5px solid var(--amber);
+  border-radius: 6px;
+  padding: 14px 18px;
+  margin: 28px 0 18px;
+}
+/* Highlight total complexity conclusions */
+/* Compact, elegant complexity summary */
+.theory__complexity-conclusion {
+  margin-top: 12px;
+  padding: 10px 14px;
+  background: var(--panel);
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--amber);
+  border-radius: 6px;
+  color: var(--ink-soft);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.theory__complexity-conclusion strong {
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 700;
+}

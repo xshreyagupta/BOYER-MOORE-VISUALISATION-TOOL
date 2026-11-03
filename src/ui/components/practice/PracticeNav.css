@@ -1,0 +1,36 @@
+.practice-nav {
+  display: flex;
+  gap: 6px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-burgundy);
+  border-radius: var(--radius-md);
+  padding: 4px;
+  width: fit-content;
+  flex-wrap: wrap;
+}
+
+.practice-nav__btn {
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  font-weight: 500;
+  background: transparent;
+  color: var(--ink-soft);
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: all 140ms ease;
+}
+
+.practice-nav__btn:hover {
+  color: var(--text-heading-ivory);
+  background: rgba(104, 45, 64, 0.2);
+}
+
+.practice-nav__btn--active {
+  background: var(--accent-burgundy);
+  border-color: var(--accent-dusty-rose);
+  color: var(--text-heading-ivory);
+  font-weight: 600;
+  box-shadow: 0 0 12px rgba(104, 45, 64, 0.4);
+}

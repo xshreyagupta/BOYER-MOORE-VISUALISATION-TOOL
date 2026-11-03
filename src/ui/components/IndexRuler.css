@@ -1,0 +1,26 @@
+.ruler {
+  display: flex;
+  gap: var(--cell-gap);
+}
+
+.ruler__tick {
+  width: var(--cell-size);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: none;
+}
+
+.ruler__label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+.ruler__mark {
+  width: 1.5px;
+  height: 6px;
+  background: var(--border-burgundy);
+}

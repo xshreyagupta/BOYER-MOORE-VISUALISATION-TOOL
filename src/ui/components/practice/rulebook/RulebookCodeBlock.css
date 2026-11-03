@@ -1,0 +1,50 @@
+.rulebook-code {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-graphite);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  border-left: 3px solid transparent;
+}
+
+.rulebook-code__tag {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.rulebook-code__pre {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-warm-ivory);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.rulebook-code__caption {
+  margin: 6px 0 0;
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: var(--ink-soft);
+}
+
+.rulebook-code--valid {
+  border-left-color: var(--match);
+}
+
+.rulebook-code--valid .rulebook-code__tag {
+  color: #7ed6ac;
+}
+
+.rulebook-code--invalid {
+  border-left-color: var(--mismatch-coral);
+}
+
+.rulebook-code--invalid .rulebook-code__tag {
+  color: var(--mismatch-coral);
+}

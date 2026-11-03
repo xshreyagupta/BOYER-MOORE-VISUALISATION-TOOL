@@ -1,0 +1,113 @@
+.write-pseudocode {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.write-pseudocode__intro {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  color: var(--ink-soft);
+}
+
+.write-pseudocode__inputs {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.write-pseudocode__field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-family: var(--font-body);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.write-pseudocode__field input {
+  font-family: var(--font-mono);
+  font-size: 15px;
+  padding: 8px 10px;
+  border: 1.5px solid var(--rule);
+  border-radius: var(--radius-sm);
+  background: var(--paper);
+  color: var(--ink);
+  min-width: 160px;
+}
+
+.write-pseudocode__field input:focus {
+  border-color: var(--amber);
+  outline: none;
+}
+
+.write-pseudocode__diagnostics {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.write-pseudocode__diagnostic {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  padding: 6px 8px;
+  border-radius: var(--radius-sm);
+}
+
+.write-pseudocode__diagnostic--error {
+  color: var(--mismatch);
+  background: var(--mismatch-soft);
+}
+
+.write-pseudocode__diagnostic--warning {
+  color: var(--amber);
+  background: var(--amber-soft);
+}
+
+.write-pseudocode__toolbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.write-pseudocode__btn {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 13px;
+  background: var(--bg-secondary);
+  color: var(--text-warm-ivory);
+  border: 1.5px solid var(--border-graphite);
+  border-radius: var(--radius-sm);
+  padding: 9px 18px;
+  cursor: pointer;
+  transition: all 140ms ease;
+}
+
+.write-pseudocode__btn:hover:not(:disabled) {
+  border-color: var(--accent-dusty-rose);
+  color: var(--text-heading-ivory);
+}
+
+.write-pseudocode__btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.write-pseudocode__btn--primary {
+  background: var(--accent-burgundy);
+  color: var(--text-heading-ivory);
+  border-color: var(--accent-dusty-rose);
+  box-shadow: 0 0 12px rgba(104, 45, 64, 0.4);
+}
+
+.write-pseudocode__btn--primary:hover:not(:disabled) {
+  background: var(--accent-dusty-rose);
+  color: var(--text-heading-ivory);
+}

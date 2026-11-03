@@ -1,0 +1,114 @@
+.execution-panel {
+  background: var(--panel);
+  border: 1.5px solid var(--rule);
+  border-left: 4px solid var(--rule-strong);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  box-shadow: var(--shadow-panel);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.execution-panel--completed {
+  border-color: var(--match);
+  border-left-color: var(--match);
+}
+
+.execution-panel--error {
+  border-color: var(--mismatch);
+  border-left-color: var(--mismatch);
+}
+
+.execution-panel__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.execution-panel__status {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.execution-panel--completed .execution-panel__status {
+  color: var(--match);
+}
+
+.execution-panel--error .execution-panel__status {
+  color: var(--mismatch);
+}
+
+.execution-panel__steps {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink-faint);
+}
+
+.execution-panel__message {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  color: var(--ink-soft);
+}
+
+.execution-panel__location {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink-faint);
+}
+
+.execution-panel__result {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--ink);
+}
+
+.execution-panel__vars {
+  margin: 0;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 4px 10px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+
+.execution-panel__vars dt {
+  color: var(--ink-faint);
+}
+
+.execution-panel__vars dd {
+  margin: 0;
+  color: var(--ink);
+  overflow-wrap: anywhere;
+}
+
+.execution-panel__diagnostics {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.execution-panel__diagnostic {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  padding: 6px 8px;
+  border-radius: var(--radius-sm);
+}
+
+.execution-panel__diagnostic--error {
+  color: var(--mismatch);
+  background: var(--mismatch-soft);
+}
+
+.execution-panel__diagnostic--warning {
+  color: var(--amber);
+  background: var(--amber-soft);
+}

@@ -1,0 +1,107 @@
+.shift-race {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.shift-race__lane {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--border-graphite);
+  background: var(--bg-secondary);
+  transition: border-color 160ms ease, background-color 160ms ease;
+}
+
+.shift-race__lane--winner {
+  border-color: var(--accent-dusty-rose);
+  background: rgba(168, 93, 112, 0.18);
+  box-shadow: 0 0 12px rgba(168, 93, 112, 0.2);
+}
+
+.shift-race__lane-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.shift-race__lane-label {
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.shift-race__lane--winner .shift-race__lane-label {
+  color: var(--accent-blush);
+}
+
+.shift-race__lane-value {
+  font-family: var(--font-mono);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-heading-ivory);
+}
+
+.shift-race__track {
+  height: 12px;
+  border-radius: 999px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-graphite);
+  overflow: hidden;
+}
+
+.shift-race__bar {
+  height: 100%;
+  border-radius: 999px;
+  background: var(--border-burgundy);
+  transition: width 220ms ease;
+}
+
+.shift-race__lane--winner .shift-race__bar {
+  background: var(--accent-dusty-rose);
+}
+
+.shift-race__formula {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--border-burgundy-subtle);
+}
+
+.shift-race__formula-expr {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--text-warm-ivory);
+}
+
+.shift-race__formula-expr strong {
+  color: var(--mismatch-coral);
+  font-size: 16px;
+}
+
+.shift-race__winner {
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: var(--accent-burgundy);
+  border: 1px solid var(--accent-dusty-rose);
+  color: var(--text-heading-ivory);
+}
+
+.shift-race__winner--equal {
+  background: rgba(88, 163, 132, 0.2);
+  border: 1px solid rgba(88, 163, 132, 0.4);
+  color: #7ed6ac;
+}

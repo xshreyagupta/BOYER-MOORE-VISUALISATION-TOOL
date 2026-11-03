@@ -1,0 +1,233 @@
+
+/* =========================================
+   BM—01 | APPLICATION SHELL
+========================================= */
+
+.app {
+  --app-bg: #2D2332;
+  --app-surface: #3B2E42;
+  --app-deep: #211927;
+  --app-accent: #A8F0CC;
+  --app-text: #FFFDF8;
+  --app-muted: #D0C4D6;
+  --app-border: rgba(230, 220, 235, 0.25);
+
+  width: 100%;
+  max-width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 22px 32px 48px;
+  box-sizing: border-box;
+  background: transparent;
+  color: var(--app-text);
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.app__header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+
+  padding: 8px 0 24px;
+  margin-bottom: 28px;
+
+  border-bottom: 1px solid var(--app-border);
+}
+
+.app__brand {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.app__eyebrow {
+  font-family: var(--font-heading);
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--app-accent);
+  font-weight: 700;
+}
+
+.app__title {
+  margin: 3px 0 0;
+  font-family: var(--font-serif);
+  font-size: 38px;
+  font-weight: 600;
+  color: var(--app-text);
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
+
+.app__title-accent {
+  color: var(--app-accent);
+  font-style: italic;
+  font-weight: 500;
+}
+
+/* =========================================
+   MODE NAVIGATION
+========================================= */
+
+.app__mode-toggle {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  padding: 5px;
+  background: var(--app-deep);
+  border: 1px solid var(--app-border);
+  border-radius: 6px;
+}
+
+.app__mode-btn {
+  position: relative;
+
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+
+  background: transparent;
+  color: var(--app-muted);
+
+  border: 1px solid transparent;
+  border-radius: 4px;
+
+  padding: 11px 18px;
+  cursor: pointer;
+  white-space: nowrap;
+
+  transition:
+    color 160ms ease,
+    background 160ms ease,
+    border-color 160ms ease;
+}
+
+.app__mode-btn:hover {
+  color: var(--app-text);
+  background: rgba(168, 240, 204, 0.1);
+}
+
+.app__mode-btn--active {
+  background: var(--app-surface);
+  border-color: var(--app-accent);
+  color: var(--app-accent);
+  font-weight: 700;
+}
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
+
+.app__main {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+/* =========================================
+   INPUT + CONFIGURATION
+========================================= */
+
+.app__controls-row {
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+
+  width: 100%;
+  min-width: 0;
+
+  background: var(--app-surface);
+  border: 1px solid var(--app-border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+/* =========================================
+   ALGORITHM COMPARISON GRID
+========================================= */
+
+.app__comparison-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 20px;
+
+  width: 100%;
+  min-width: 0;
+}
+
+.app__comparison-grid--2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.app__comparison-grid--3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+/* =========================================
+   RESPONSIVE LAYOUT
+========================================= */
+
+@media (max-width: 1100px) {
+  .app__controls-row {
+    flex-direction: column;
+  }
+
+  .app__comparison-grid--2,
+  .app__comparison-grid--3 {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .app {
+    padding: 16px 16px 36px;
+  }
+
+  .app__header-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    margin-bottom: 22px;
+  }
+
+  .app__title {
+    font-size: 30px;
+  }
+
+  .app__mode-toggle {
+    width: 100%;
+    overflow-x: auto;
+    justify-content: flex-start;
+  }
+
+  .app__mode-btn {
+    padding: 10px 13px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .app {
+    padding: 14px 12px 30px;
+  }
+
+  .app__title {
+    font-size: 26px;
+  }
+
+  .app__mode-btn {
+    padding: 9px 10px;
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,356 @@
+/* StressTestPanel.css */
+
+.stress-panel {
+  background: var(--panel);
+  border: 1.5px solid var(--rule);
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-shadow: var(--shadow-panel);
+}
+
+/* Header */
+.stress-panel__eyebrow {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 4px;
+}
+
+.stress-panel__title {
+  margin: 0 0 6px;
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+
+.stress-panel__desc {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+
+/* Controls */
+.stress-panel__controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.stress-panel__hint {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: var(--ink-faint);
+}
+
+/* Buttons */
+.stress-panel__btn {
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+.stress-panel__btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.stress-panel__btn--primary {
+  background: var(--amber);
+  color: var(--panel);
+}
+
+.stress-panel__btn--primary:not(:disabled):hover {
+  opacity: 0.88;
+}
+
+.stress-panel__btn--load {
+  background: var(--match);
+  color: var(--panel);
+  align-self: flex-start;
+}
+
+.stress-panel__btn--load:hover {
+  opacity: 0.88;
+}
+
+/* Running state */
+.stress-panel__running {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+
+.stress-panel__spinner {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--rule);
+  border-top-color: var(--amber);
+  border-radius: 50%;
+  animation: stress-spin 0.7s linear infinite;
+}
+
+@keyframes stress-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Clean (no counterexample) */
+.stress-panel__clean {
+  background: color-mix(in srgb, var(--match) 8%, transparent);
+  border: 1px solid color-mix(in srgb, var(--match) 30%, transparent);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+}
+
+.stress-panel__clean-title {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--match);
+  margin-bottom: 6px;
+}
+
+.stress-panel__clean-body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+
+/* Found counterexample */
+.stress-panel__found {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: color-mix(in srgb, var(--mismatch) 6%, transparent);
+  border: 1.5px solid color-mix(in srgb, var(--mismatch) 35%, transparent);
+  border-left: 4px solid var(--mismatch);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+}
+
+.stress-panel__found-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.stress-panel__found-title {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--mismatch);
+}
+
+.stress-panel__found-meta {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: var(--ink-faint);
+}
+
+/* Kind badges */
+.stress-badge {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 3px;
+}
+
+.stress-badge--execution-failure {
+  background: rgba(229, 139, 134, 0.2);
+  color: var(--mismatch-coral);
+  border: 1px solid rgba(229, 139, 134, 0.35);
+}
+
+.stress-badge--wrong-matches {
+  background: rgba(168, 93, 112, 0.2);
+  color: var(--accent-blush);
+  border: 1px solid rgba(168, 93, 112, 0.35);
+}
+
+.stress-badge--trace-divergence {
+  background: rgba(104, 45, 64, 0.25);
+  color: var(--text-warm-ivory);
+  border: 1px solid var(--border-burgundy);
+}
+
+/* Pair display */
+.stress-panel__pair {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.stress-pair-field {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.stress-pair-field__label {
+  font-family: var(--font-body);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-faint);
+}
+
+.stress-pair-field__value {
+  font-family: var(--font-mono);
+  font-size: 15px;
+  color: var(--ink);
+  background: color-mix(in srgb, var(--rule) 50%, transparent);
+  padding: 4px 8px;
+  border-radius: 3px;
+  letter-spacing: 0.06em;
+}
+
+/* Expected vs actual comparison */
+.stress-panel__comparison {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.stress-comparison-row {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.stress-comparison-row__label {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: var(--ink-faint);
+  min-width: 140px;
+}
+
+.stress-comparison-row__value {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.stress-comparison-row--expected .stress-comparison-row__value {
+  color: var(--match);
+}
+
+.stress-comparison-row--actual .stress-comparison-row__value {
+  color: var(--mismatch);
+}
+
+/* Execution failure details */
+.stress-panel__exec-failure {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stress-panel__exec-failure-msg {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--mismatch);
+  font-weight: 600;
+}
+
+.stress-panel__exec-error-detail {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink-soft);
+}
+
+/* Description */
+.stress-panel__description {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+
+.stress-panel__load-hint {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: var(--ink-faint);
+}
+
+/* Divergence sub-panel */
+.stress-divergence {
+  background: color-mix(in srgb, var(--mismatch) 10%, transparent);
+  border: 1px solid color-mix(in srgb, var(--mismatch) 25%, transparent);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.stress-divergence__title {
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--mismatch);
+}
+
+.stress-divergence__line {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink-faint);
+}
+
+.stress-divergence__values {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.stress-divergence__val {
+  font-family: var(--font-body);
+  font-size: 12px;
+}
+
+.stress-divergence__val--student {
+  color: var(--mismatch);
+}
+
+.stress-divergence__val--expected {
+  color: var(--match);
+}
+
+.stress-divergence__message {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}

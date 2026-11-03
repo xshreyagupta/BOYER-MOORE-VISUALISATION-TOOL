@@ -1,0 +1,55 @@
+.pseudocode-line {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  width: 100%;
+  padding: 3px 8px 3px calc(8px + var(--pseudocode-indent, 0) * 16px);
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-warm-ivory);
+  transition: all 120ms ease;
+}
+
+.pseudocode-line:hover {
+  background: rgba(168, 93, 112, 0.1);
+  color: var(--text-heading-ivory);
+}
+
+.pseudocode-line__number {
+  flex: 0 0 auto;
+  min-width: 1.5em;
+  color: var(--ink-faint);
+  text-align: right;
+  user-select: none;
+}
+
+.pseudocode-line__text {
+  white-space: pre;
+}
+
+/* Active highlighted line with soft blush illumination */
+.pseudocode-line--active {
+  background: rgba(168, 93, 112, 0.25);
+  border-color: rgba(230, 162, 173, 0.5);
+  box-shadow: 0 0 12px rgba(230, 162, 173, 0.2);
+}
+
+.pseudocode-line--active .pseudocode-line__number {
+  color: var(--accent-blush);
+  font-weight: 600;
+}
+
+.pseudocode-line--active .pseudocode-line__text {
+  color: var(--text-heading-ivory);
+  font-weight: 600;
+}
+
+.pseudocode-line--selected {
+  border-color: var(--accent-dusty-rose);
+}

@@ -1,0 +1,100 @@
+
+.cc {
+  position: relative;
+  width: var(--cell-size);
+  height: var(--cell-size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 19px;
+  font-weight: 600;
+  background: #332739;
+  border: 1px solid #81728A;
+  border-radius: var(--radius-sm);
+  color: #FFFDF8;
+  transition:
+    background-color 150ms ease,
+    border-color 150ms ease,
+    transform 150ms ease,
+    color 150ms ease,
+    box-shadow 150ms ease;
+  flex: none;
+}
+
+.cc__index {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  color: #D0C4D6;
+  letter-spacing: 0.02em;
+}
+
+.cc__char {
+  line-height: 1;
+}
+
+/* Characters outside the current pattern window */
+.cc--dim {
+  background: #29212F;
+  border-color: #766880;
+  color: #C9BDCF;
+  opacity: 1;
+}
+
+/* Characters already compared and matched */
+.cc--settled {
+  background: rgba(88, 163, 132, 0.18);
+  border: 1px solid #83CBA9;
+  color: #D9F5E6;
+  opacity: 1;
+}
+
+/* Currently active character */
+.cc--active {
+  background: rgba(168, 240, 204, 0.24);
+  border: 2px solid #C5F8DD;
+  color: #FFFFFF;
+  transform: translateY(-2px) scale(1.06);
+  box-shadow:
+    0 0 16px rgba(168, 240, 204, 0.4),
+    inset 0 0 8px rgba(168, 240, 204, 0.18);
+  z-index: 4;
+}
+
+/* Successful character comparison */
+.cc--match {
+  background: rgba(88, 163, 132, 0.3);
+  border: 2px solid #A8F0CC;
+  color: #FFFFFF;
+  transform: translateY(-2px) scale(1.06);
+  box-shadow:
+    0 0 16px rgba(168, 240, 204, 0.35),
+    inset 0 0 8px rgba(168, 240, 204, 0.2);
+  z-index: 4;
+}
+
+/* Failed character comparison */
+.cc--mismatch {
+  background: rgba(229, 139, 134, 0.25);
+  border: 2px solid #FF9991;
+  color: #FFFFFF;
+  transform: translateY(-2px) scale(1.06);
+  box-shadow:
+    0 0 18px rgba(255, 153, 145, 0.4),
+    inset 0 0 8px rgba(255, 153, 145, 0.2);
+  z-index: 4;
+}
+
+/* Fully confirmed match */
+.cc--confirmed {
+  background: #285B45;
+  border: 2px solid #A8F0CC;
+  color: #FFFFFF;
+  box-shadow: 0 0 12px rgba(168, 240, 204, 0.3);
+  opacity: 1;
+}

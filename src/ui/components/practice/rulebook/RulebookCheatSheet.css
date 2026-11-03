@@ -1,0 +1,48 @@
+.rulebook-cheat-sheet {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-burgundy-subtle);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-panel);
+  padding: 20px 22px;
+  scroll-margin-top: 16px;
+}
+
+.rulebook-cheat-sheet__title {
+  margin: 0 0 14px;
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--text-heading-ivory);
+}
+
+.rulebook-cheat-sheet__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 12px;
+}
+
+.rulebook-cheat-sheet__entry {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-graphite);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+}
+
+.rulebook-cheat-sheet__label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-dusty-rose);
+  margin-bottom: 4px;
+}
+
+.rulebook-cheat-sheet__code {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--text-warm-ivory);
+  white-space: pre-wrap;
+}

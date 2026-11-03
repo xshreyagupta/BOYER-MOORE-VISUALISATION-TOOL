@@ -1,0 +1,134 @@
+.comparison-panel {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-burgundy-subtle);
+  border-radius: var(--radius-md);
+  box-shadow: none;
+  padding: 20px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+  overflow-x: hidden;
+}
+
+.comparison-panel__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-burgundy-subtle);
+}
+
+.comparison-panel__label {
+  font-family: var(--font-heading);
+  font-size: 14.5px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-heading-ivory);
+}
+
+.comparison-panel__step {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink-soft);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.comparison-panel__done-badge {
+  background: rgba(88, 163, 132, 0.18);
+  color: #7ed6ac;
+  border: 1px solid rgba(88, 163, 132, 0.4);
+  border-radius: var(--radius-sm);
+  padding: 2px 7px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+/* Visualization stage: spacious, deep laboratory canvas */
+.comparison-panel__stage {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+  background: linear-gradient(rgba(104, 45, 64, 0.04) 1px, transparent 1px) 0 0 / 100% 24px, #130f13;
+  border: 1px solid var(--border-burgundy-subtle);
+  border-radius: var(--radius-sm);
+  padding: 24px 22px 20px;
+}
+
+.comparison-panel__body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 20px;
+  align-items: start;
+  min-width: 0;
+}
+
+/* Desktop: substantially wider visualization stage on left (over 70%), pseudocode on right */
+.comparison-panel__body--with-code {
+  grid-template-columns: minmax(0, 2.2fr) minmax(300px, 0.85fr);
+}
+
+/* Shared horizontal viewport for text and pattern */
+.comparison-panel__visual-scroll {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 8px;
+  scroll-behavior: auto;
+  overscroll-behavior-x: contain;
+}
+
+.comparison-panel__visual-content {
+  width: max-content;
+  min-width: 100%;
+}
+
+/* Main visualization column */
+.comparison-panel__main {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+}
+
+/* Pseudocode column */
+.comparison-panel__code {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+/* Stack pseudocode below visualization on smaller screens */
+@media (max-width: 1024px) {
+  .comparison-panel__body--with-code {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* In multi-screen comparison mode (2 or 3 screens), keep pseudocode below each panel's stage */
+.app__comparison-grid--2 .comparison-panel__body--with-code,
+.app__comparison-grid--3 .comparison-panel__body--with-code {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.comparison-panel__code {
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+.comparison-panel__code pre,
+.comparison-panel__code code {
+  max-width: 100%;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}

@@ -1,0 +1,114 @@
+
+:root {
+  /* =========================================================================
+     BM—01 | PROJECTOR-FRIENDLY AUBERGINE × DIGITAL MINT
+     ========================================================================= */
+
+  /* Backgrounds */
+  --bg-almost-black: #2D2332;
+  --bg-secondary: #211927;
+  --bg-surface: #3B2E42;
+  --bg-surface-elevated: #483951;
+  --bg-surface-hover: #54425E;
+
+  /* Borders */
+  --border-graphite: #685A70;
+  --border-burgundy: #9BE4C1;
+  --border-burgundy-subtle: rgba(220, 205, 225, 0.25);
+
+  /* Text */
+  --text-warm-ivory: #E5DDE8;
+  --text-heading-ivory: #FFFDF8;
+
+  /* Accents */
+  --accent-dusty-rose: #A8F0CC;
+  --accent-blush: #C5F8DD;
+  --accent-burgundy: #5A987A;
+
+  /* Error */
+  --mismatch-coral: #FF9991;
+
+  /* =========================================================================
+     EXISTING COMPONENT VARIABLE MAPPINGS
+     ========================================================================= */
+
+  --paper: #2D2332;
+  --paper-grid: rgba(230, 220, 235, 0.055);
+
+  --panel: #3B2E42;
+  --panel-elevated: #483951;
+  --panel-sunken: #211927;
+
+  --ink: #E5DDE8;
+  --ink-heading: #FFFDF8;
+  --ink-soft: #D0C4D6;
+  --ink-faint: #B5A5BE;
+
+  --rule: rgba(230, 220, 235, 0.22);
+  --rule-strong: #9B86A8;
+  --rule-burgundy: #9B86A8;
+
+  /* Active / important elements */
+  --amber: #A8F0CC;
+  --amber-soft: rgba(168, 240, 204, 0.17);
+
+  --blush: #C5F8DD;
+  --blush-soft: rgba(197, 248, 221, 0.15);
+  --blush-glow: 0 0 18px rgba(168, 240, 204, 0.22);
+
+  /* Match */
+  --match: #A8F0CC;
+  --match-soft: rgba(168, 240, 204, 0.18);
+  --match-glow: 0 0 16px rgba(168, 240, 204, 0.2);
+
+  /* Mismatch */
+  --mismatch: #FF9991;
+  --mismatch-soft: rgba(255, 153, 145, 0.19);
+  --mismatch-glow: 0 0 16px rgba(255, 153, 145, 0.2);
+
+  /* =========================================================================
+     TYPOGRAPHY
+     ========================================================================= */
+
+  --font-serif: "Playfair Display", Georgia, "Times New Roman", serif;
+
+  --font-heading: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  --font-body: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  --font-mono: "JetBrains Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+
+  --font-display: var(--font-heading);
+
+  /* =========================================================================
+     LAYOUT
+     ========================================================================= */
+
+  --radius-sm: 3px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+
+  --cell-size: 48px;
+  --cell-gap: 5px;
+
+  /* =========================================================================
+     SHADOWS
+     ========================================================================= */
+
+  --shadow-panel:
+    0 2px 5px rgba(0, 0, 0, 0.24),
+    0 0 1px rgba(255, 255, 255, 0.1);
+
+  --shadow-elevated:
+    0 5px 18px rgba(0, 0, 0, 0.3);
+
+  --shadow-glow-rose:
+    0 0 18px rgba(168, 240, 204, 0.1);
+
+  --ambient-rose:
+    radial-gradient(
+      circle at 50% -20%,
+      rgba(168, 240, 204, 0.08),
+      transparent 70%
+    );
+}

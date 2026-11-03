@@ -1,0 +1,104 @@
+.preprocessing-lab {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.preprocessing-lab__controls {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-burgundy-subtle);
+  border-radius: var(--radius-md);
+  padding: 18px 22px;
+  box-shadow: var(--shadow-panel);
+}
+
+.preprocessing-lab__inputs {
+  display: flex;
+  gap: 16px;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.preprocessing-lab__field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.preprocessing-lab__field input {
+  font-family: var(--font-mono);
+  font-size: 15px;
+  padding: 9px 12px;
+  border: 1.5px solid var(--border-graphite);
+  border-radius: var(--radius-sm);
+  background: var(--bg-secondary);
+  color: var(--text-heading-ivory);
+  min-width: 220px;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.preprocessing-lab__field input:focus {
+  border-color: var(--accent-dusty-rose);
+  box-shadow: 0 0 10px rgba(168, 93, 112, 0.25);
+  outline: none;
+}
+
+.preprocessing-lab__kind {
+  display: flex;
+  gap: 4px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-graphite);
+  border-radius: var(--radius-sm);
+  padding: 3px;
+}
+
+.preprocessing-lab__kind-btn {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  background: transparent;
+  color: var(--ink-soft);
+  border: 1px solid transparent;
+  border-radius: 3px;
+  padding: 7px 14px;
+  cursor: pointer;
+  transition: all 140ms ease;
+}
+
+.preprocessing-lab__kind-btn:hover {
+  color: var(--text-heading-ivory);
+}
+
+.preprocessing-lab__kind-btn--active {
+  background: var(--accent-burgundy);
+  border-color: var(--accent-dusty-rose);
+  color: var(--text-heading-ivory);
+  font-weight: 600;
+}
+
+.preprocessing-lab__build {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 14px;
+  background: var(--accent-burgundy);
+  color: var(--text-heading-ivory);
+  border: 1px solid var(--accent-dusty-rose);
+  border-radius: var(--radius-sm);
+  padding: 10px 24px;
+  cursor: pointer;
+  transition: all 140ms ease;
+  box-shadow: 0 2px 10px rgba(104, 45, 64, 0.4);
+}
+
+.preprocessing-lab__build:hover {
+  background: var(--accent-dusty-rose);
+  box-shadow: 0 2px 14px rgba(168, 93, 112, 0.5);
+  transform: translateY(-1px);
+}

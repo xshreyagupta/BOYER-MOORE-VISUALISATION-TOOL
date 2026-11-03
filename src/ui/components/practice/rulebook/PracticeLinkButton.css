@@ -1,0 +1,20 @@
+.practice-link-btn {
+  align-self: flex-start;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 12.5px;
+  letter-spacing: 0.03em;
+  background: var(--accent-burgundy);
+  color: var(--text-heading-ivory);
+  border: 1.5px solid var(--accent-dusty-rose);
+  border-radius: var(--radius-sm);
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: all 140ms ease;
+  box-shadow: 0 0 10px rgba(104, 45, 64, 0.4);
+}
+
+.practice-link-btn:hover {
+  background: var(--accent-dusty-rose);
+  transform: translateY(-1px);
+}

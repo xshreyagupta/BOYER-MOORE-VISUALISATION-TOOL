@@ -1,0 +1,19 @@
+.rulebook-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.rulebook-panel__intro {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  max-width: 70ch;
+}
+
+.rulebook-panel__sections {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}

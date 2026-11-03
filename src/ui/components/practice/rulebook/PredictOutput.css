@@ -1,0 +1,50 @@
+.predict-output {
+  background: rgba(244, 228, 200, 0.08);
+  border: 1px dashed rgba(193, 131, 43, 0.4);
+  border-radius: var(--radius-sm);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.predict-output__eyebrow {
+  font-family: var(--font-display);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--amber);
+}
+
+.predict-output__question {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--ink);
+}
+
+.predict-output__answer {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--match);
+}
+
+.predict-output__reveal {
+  align-self: flex-start;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 12px;
+  background: var(--panel);
+  color: var(--ink);
+  border: 1.5px solid var(--rule);
+  border-radius: var(--radius-sm);
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.predict-output__reveal:hover {
+  border-color: var(--amber);
+  color: var(--amber);
+}
